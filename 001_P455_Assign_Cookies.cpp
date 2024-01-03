@@ -11,9 +11,7 @@ If s[j] >= g[i], we can assign the cookie j to the child i,
 and the child i will be content. Your goal is to maximize the number 
 of your content children and output the maximum number.
 
-Code: 
-*/
-
+Code:   */
 class Solution {
 public:
     int findContentChildren(vector<int>& g, vector<int>& s) {
