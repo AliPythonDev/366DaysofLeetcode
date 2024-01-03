@@ -10,8 +10,7 @@ You are given an integer array nums. You need to create a 2D array from nums 
 Return the resulting array. If there are multiple answers, return any of them.
 Note that the 2D array can have a different number of elements on each row.
 
-Code:
-*/
+Code:    */
 class Solution {
 public:
     vector<vector<int>> findMatrix(vector<int>& nums) {
