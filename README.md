@@ -18,7 +18,7 @@ LeetCode is not just a platform; it's my daily workout ground for coding muscles
 
 ### 🛠️ Tech Stack:
 
-- **Language**: Python/C++ (I love variety!)
+- **Language**: C++
 - **Version Control**: Git
 - **Documentation**: Detailed explanations and thought process with each solution.
 
