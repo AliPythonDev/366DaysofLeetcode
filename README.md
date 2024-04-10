@@ -1,6 +1,6 @@
-**DSA LeetCode 100-Day Streak Challenge** 🚀
+**DSA LeetCode 365-Day Streak Challenge** 🚀
 
-Welcome to my 100-day journey of conquering Data Structures and Algorithms on LeetCode! 👨‍💻
+Welcome to my 365-day journey of conquering Data Structures and Algorithms on LeetCode! 👨‍💻
 
 ### 📖 What's This Challenge About?
 
