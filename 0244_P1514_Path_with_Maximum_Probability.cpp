@@ -34,33 +34,29 @@ Constraints:
 Code:  */
 class Solution {
 public:
-    double maxProbability(int n, vector<vector<int>>& edges, vector<double>& succProb, int start, int end) {
-        vector<vector<pair<int, double>>> g(n);
-        for (int i = 0; i < edges.size(); ++i) {
-            int a = edges[i][0], b = edges[i][1];
-            double s = succProb[i];
-            g[a].push_back({b, s});
-            g[b].push_back({a, s});
-        }
-        vector<double> d(n);
-        d[start] = 1.0;
-        queue<pair<double, int>> q;
-        q.push({1.0, start});
-        while (!q.empty()) {
-            auto p = q.front();
-            q.pop();
-            double w = p.first;
-            int u = p.second;
-            if (d[u] > w) continue;
-            for (auto& e : g[u]) {
-                int v = e.first;
-                double t = e.second;
-                if (d[v] < d[u] * t) {
-                    d[v] = d[u] * t;
-                    q.push({d[v], v});
+    double maxProbability(int n, vector<vector<int>>& edges, vector<double>& succProb, int start_node, int end_node) {
+        vector<double> maxProb(n, 0.0);
+        maxProb[start_node] = 1.0;
+
+        for (int i = 0; i < n - 1; ++i) {
+            bool updated = false;
+            for (int j = 0; j < edges.size(); ++j) {
+                int u = edges[j][0];
+                int v = edges[j][1];
+                double prob = succProb[j];
+
+                if (maxProb[u] * prob > maxProb[v]) {
+                    maxProb[v] = maxProb[u] * prob;
+                    updated = true;
+                }
+                if (maxProb[v] * prob > maxProb[u]) {
+                    maxProb[u] = maxProb[v] * prob;
+                    updated = true;
                 }
             }
+            if (!updated) break;
         }
-        return d[end];
+
+        return maxProb[end_node];
     }
 };
