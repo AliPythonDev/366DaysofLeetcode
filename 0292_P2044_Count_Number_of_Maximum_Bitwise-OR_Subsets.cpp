@@ -1,6 +1,6 @@
 /*
 Day: 292
-Problem Number: 2044 (https://leetcode.com/problems/maximum-swap)
+Problem Number: 2044 (https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets)
 Date: 18-10-2024
 Description:
 Given an integer array nums, find the maximum possible bitwise OR of a subset of nums and return the number of different non-empty subsets with the maximum bitwise OR.
