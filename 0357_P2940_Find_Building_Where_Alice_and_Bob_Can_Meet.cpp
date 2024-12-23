@@ -29,7 +29,6 @@ In the fourth query, Alice and Bob can move to building 4 since heights[3] < hei
 In the fifth query, Alice can directly move to Bob's building since heights[1] < heights[6].
 For ans[i] != -1, It can be shown that ans[i] is the leftmost building where Alice and Bob can meet.
 For ans[i] == -1, It can be shown that there is no building where Alice and Bob can meet.
-
  
 Constraints:
 * 1 <= heights.length <= 5 * 10^4
