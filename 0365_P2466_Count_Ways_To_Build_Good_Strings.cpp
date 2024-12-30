@@ -30,19 +30,26 @@ Constraints:
 Code:  */
 class Solution {
 public:
-    const int mod = 1e9 + 7;
+    int dp[100005];
+    int MOD = 1e9 + 7;
+    int func(int low, int high, int zero, int one, int size){
+        if(size > high){
+            return 0;
+        }
 
+        if(dp[size] != -1){
+            return dp[size];
+        }
+
+        int temp = size >= low ? 1 : 0;
+        long long zero_cnt = func(low, high, zero, one, size + zero);
+        long long one_cnt = func(low, high, zero, one, size + one);
+
+        return dp[size] = (zero_cnt + one_cnt + temp) % MOD;
+    }
     int countGoodStrings(int low, int high, int zero, int one) {
-        vector<int> f(high + 1, -1);
-        function<int(int)> dfs = [&](int i) -> int {
-            if (i > high) return 0;
-            if (f[i] != -1) return f[i];
-            long ans = i >= low && i <= high;
-            ans += dfs(i + zero) + dfs(i + one);
-            ans %= mod;
-            f[i] = ans;
-            return ans;
-        };
-        return dfs(0);
+        memset(dp, -1, sizeof(dp));
+
+        return func(low, high, zero, one, 0);
     }
 };
